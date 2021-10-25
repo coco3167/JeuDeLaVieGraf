@@ -22,7 +22,7 @@ namespace JeuDeLaVieGraf
         {
             InitializeComponent();
             game = new Game(n, nbAliveCell);
-            MyTimer.Interval = (500);
+            MyTimer.Interval = (200);
             MyTimer.Tick += new EventHandler(MyTimer_Tick);
         }
 
@@ -47,10 +47,10 @@ namespace JeuDeLaVieGraf
             if (int.TryParse(LengthText.Text, out n))
             {
                 pictureBox1.Size = new Size(5*n, 5*n);
-                pictureBox1.Top = (Screen.PrimaryScreen.WorkingArea.Height - pictureBox1.Height) / 2;
-                pictureBox1.Left = (Screen.PrimaryScreen.WorkingArea.Width - pictureBox1.Width) / 2;
                 nbAliveCell = n * n / 2;
                 game = new Game(n,nbAliveCell);
+                MyTimer.Stop();
+                Refresh();
             }
         }
 
