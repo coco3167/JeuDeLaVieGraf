@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -220,11 +221,13 @@ namespace JeuDeLaVieGraf
                 else
                     loop--;
             }
-            grid = new Grid(n, AliveCellsCoords);
+            grid = new Grid(n, AliveCellsCoords); 
         }
 
         public void Paint(Graphics g)
         {
+            Debug.Indent();
+            Debug.WriteLine("Merde");
             SolidBrush whiteBrush = new SolidBrush(Color.White);
             for (int i = 0; i < n; i++)
             {
@@ -258,11 +261,7 @@ namespace JeuDeLaVieGraf
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        
-        
-        
-        
-        
+
         [STAThread]
         static void Main()
         {

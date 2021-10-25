@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace JeuDeLaVieGraf
     public partial class Form1 : Form
     {
         private Game game;
-        private int nbAliveCell = 40*30;
+        private int nbAliveCell = 40*20;
         public int n;
         public Form1()
         {
@@ -21,7 +22,7 @@ namespace JeuDeLaVieGraf
             InitializeComponent(n);
             game = new Game(n,nbAliveCell);
             Timer MyTimer = new Timer();
-            MyTimer.Interval = (600);
+            MyTimer.Interval = (500);
             MyTimer.Tick += new EventHandler(MyTimer_Tick);
             MyTimer.Start();
         }
@@ -39,7 +40,7 @@ namespace JeuDeLaVieGraf
         
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.Write("");
+            pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
         }
     }
 }
