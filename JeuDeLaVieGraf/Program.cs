@@ -226,8 +226,6 @@ namespace JeuDeLaVieGraf
 
         public void Paint(Graphics g)
         {
-            Debug.Indent();
-            Debug.WriteLine("Merde");
             SolidBrush whiteBrush = new SolidBrush(Color.White);
             for (int i = 0; i < n; i++)
             {
